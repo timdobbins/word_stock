@@ -1,0 +1,46 @@
+#!/usr/bin/env ruby
+
+
+# Display keyword
+# Display choices
+# Check answer
+
+
+
+
+class MegaQuizzer
+
+
+
+  # Define a foreign keyword and its local translation
+  def initialize (k, t)
+    @keyword = k
+    @translation = t
+  end
+
+  # Ask user to translate the foreign keyword
+  def ask_question
+    puts "What does \"#{@keyword}\" mean?"
+  end
+
+  # Check the user's answer
+  def check_answer(a)
+    if a == @translation
+      puts "Correct! \"#{@keyword}\" means \"#{@translation}\"."
+    else
+      puts "Wrong! \"#{@keyword}\" means \"#{@translation}\"."
+    end
+  end
+
+
+
+end
+
+
+if __FILE__ == $0
+  mq = MegaQuizzer.new("kuh", "cow") # Initialize quizzer
+  mq.ask_question # Quiz the user
+  mq.check_answer("bread") # Check the user's response
+  # Repeat
+
+end
